@@ -3,10 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/','welcome');
-Route::view('contacto','contact');
-Route::view('/blog','blog');
-Route::view('/nosotros','about');
+Route::view('/','welcome')->name('home');
+Route::view('/contact','contact')->name('contact');
+Route::view('/blog','blog')->name('blog');
+Route::view('/about','about')->name('about');
 
 Route::match(['put', 'patch'], '/', function(){
     return 'This is a PUT PATCH request';
