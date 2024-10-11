@@ -1,21 +1,14 @@
-{{--crear un formulario--}}
 
-<x-layout meta-title="Create a new Post" meta-description="Form to create a new Post">
-    <h1>{{__('Create a new Post')}}</h1>
+<x-layout :meta-title="$post->title" :meta-description="$post->body">
+    <h1>{{__('Edit Post')}}</h1>    {{-- traducir--}}
 
-{{--    esta variable la cea el lenguaje cuando hay un errror--}}
-{{--    @dump($errors)--}}
-
-{{--    @foreach($errors->all() as $error)--}}
-{{--        <div>{{ $error }}</div>--}}
-{{--    @endforeach--}}
-
-    <form method="POST" action="{{route('posts.store')}}">
+    <a href="{{route('posts.index')}}">{{__('Back')}}</a>
+    <form method="POST" action="{{route('posts.update', $post)}}">
         @csrf
         <label>
 
             {{__('Title')}} <br/>
-            <input type="text" name="title" value="{{old('title')}}">
+            <input type="text" name="title" value="{{old('title', $post->title)}}">
             @error('title')
             <br/>
             <small style="color : red">{{ $message }}</small>

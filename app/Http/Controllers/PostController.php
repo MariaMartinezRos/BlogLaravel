@@ -35,6 +35,15 @@ class PostController extends Controller
     public function store(Request $request){
         //hya que hacer uana redireccecion par auqe una vez qeu cree o guarde le post se me redirija al index
 //        return $request->input('title');
+
+
+//        se quita de momento para poder hacer nuestras validaciones tranquilamente
+        $request->validate([
+            'title' => 'required | min:3',
+            'body' => 'required | min:3',
+        ]);
+
+
         $post= new Post();
         $post->title = $request->input('title');
         $post->body = $request->input('body');
@@ -43,6 +52,10 @@ class PostController extends Controller
         session()->flash('status', 'Post created successfully');
 
         return to_route('posts.index');
+    }
+
+    public function edit(Post $post){
+        return view('posts.edit', compact('post'));
     }
 }
 
