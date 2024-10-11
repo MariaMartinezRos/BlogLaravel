@@ -12,7 +12,7 @@
         <div style="display: flex; align-items: baseline">
             <h2><a href="{{route('posts.show',$post)}}">{{ $post->title }}</a></h2>
         </div>
-        <a href="{{ route('post.edit', $post) }}">Edit</a>
+        <a href="{{ route('posts.edit', $post) }}">Edit</a>
     @endforeach
 </x-layout>
 
