@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 //use GuzzleHttp\Psr7\Request;
 use Illuminate\Http\Request;
@@ -29,33 +31,49 @@ class PostController extends Controller
     }
 
     public function create(){
-        return view('posts.create');
+        return view('posts.create',['post'=>new Post()]);
     }
 
-    public function store(Request $request){
-        //hya que hacer uana redireccecion par auqe una vez qeu cree o guarde le post se me redirija al index
-//        return $request->input('title');
+    public function store(StorePostRequest $request){
 
+//        dd($validated);
 
-//        se quita de momento para poder hacer nuestras validaciones tranquilamente
-        $request->validate([
-            'title' => 'required | min:3',
-            'body' => 'required | min:3',
-        ]);
+        Post::create($request->validated());
 
+//        session()->flash('status', 'Post created successfully');
 
-        $post= new Post();
-        $post->title = $request->input('title');
-        $post->body = $request->input('body');
-        $post->save();
-
-        session()->flash('status', 'Post created successfully');
-
-        return to_route('posts.index');
+        return to_route('posts.index')
+            ->with('status', 'Post created successfully');
     }
 
     public function edit(Post $post){
         return view('posts.edit', compact('post'));
+    }
+
+    public function update(UpdatePostRequest $request, Post $post){
+//        hay qeu validar datos y actualizar la base de datos con los datos nuevos.
+//        actualizar, guardar, avisar al usuario y actualizar el estado
+//        $validated= $request->validate([
+//           'title' => 'required | min:3',
+//           'body' => 'required',
+//        ]);
+
+        $post->update( $request->validated() );
+
+//        session()->flash('status', 'Post updated successfully!');
+        return to_route('posts.show', $post)
+            ->with('status', 'Post updated successfully');
+    }
+
+    public function destroy(Post $post){
+//        return $post;
+        //$post->delete();
+
+        $post->delete();
+
+        return to_route('posts.index')
+            ->with('status', 'Post deleted successfully');
+
     }
 }
 
