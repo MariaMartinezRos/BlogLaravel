@@ -1,4 +1,3 @@
-
 <header class="bg-white px-6 shadow dark:bg-slate-900">
     <div
         class="mx-auto flex h-16 max-w-6xl items-center justify-between"
@@ -87,32 +86,31 @@
                 </svg>
             </a>
             <div class="ml-8 hidden space-x-8 md:flex">
-                <a class="px-3 py-2 {{request()->routeIs('home') ? 'text-sky-500' : 'text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500'}}" href="/"
+                <a class="px-3 py-2 {{ request()->routeIs('home') ? 'text-sky-500' : 'text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500' }}"
+                   href="/"
                 >
                     Home
                 </a>
                 <a
                     class="px-3 py-2 {{ request()->routeIs('posts.*') ? 'text-sky-500' : 'text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500' }}"
-                    href="{{route('posts.index')}}"
+                    href="{{ route('posts.index') }}"
                 >
                     Blog
                 </a>
                 <a
                     class="px-3 py-2 {{ request()->routeIs('about') ? 'text-sky-500' : 'text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500' }}"
-                    href="{{route('about')}}"
+                    href="{{ route('about') }}"
                 >
                     About
                 </a>
                 <a
                     class="px-3 py-2 {{ request()->routeIs('contact') ? 'text-sky-500' : 'text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500' }}"
-                    href="{{route('contact')}}"
+                    href="{{ route('contact') }}"
                 >
                     Contact
                 </a>
             </div>
-
         </div>
-
         <div class="flex">
             <div class="relative pt-1">
                 <button
@@ -201,11 +199,10 @@
                             fill="none"
                             stroke="currentColor"
                             stroke-width="1.5"
-
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
                             aria-hidden="true"
-                            >
+                        >
                             <path
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
@@ -253,26 +250,26 @@
         class="hidden space-y-1 border-t pb-3 pt-2 dark:border-slate-500"
     >
         <a
-            href="{{route('home')}}"
-            class="block rounded-md bg-sky-500 px-3 py-2 {{ request()->routeIs('home') ? 'bg-sky-500 text-white':'text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white' }}"
+            href="{{ route('home') }}"
+            class="block rounded-md bg-sky-500 px-3 py-2 {{ request()->routeIs('home') ? 'bg-sky-500 text-white' : 'text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white' }}"
         >
             Home
         </a>
         <a
-            href="{{route('posts.index')}}"
-            class="block rounded-md px-3 py-2 {{ request()->routeIs('posts.*') ? 'bg-sky-500 text-white':'text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white' }}"
+            href="{{ route('posts.index') }}"
+            class="block rounded-md px-3 py-2 {{ request()->routeIs('posts.*') ? 'bg-sky-500 text-white' : 'text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white' }}"
         >
             Blog
         </a>
         <a
             href="{{ route('about') }}"
-            class="block rounded-md px-3 py-2 {{ request()->routeIs('about') ? 'bg-sky-500 text-white':'text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white' }}"
+            class="block rounded-md px-3 py-2 {{ request()->routeIs('about') ? 'bg-sky-500 text-white' : 'text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white' }}"
         >
             About
         </a>
         <a
             href="{{ route('contact') }}"
-            class="block rounded-md px-3 py-2 {{ request()->routeIs('contact') ? 'bg-sky-500 text-white':'text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white' }}"
+            class="block rounded-md px-3 py-2 {{ request()->routeIs('contact') ? 'bg-sky-500 text-white' : 'text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white' }}"
         >
             Contact
         </a>
