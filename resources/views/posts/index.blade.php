@@ -12,8 +12,9 @@
         </h1>
 
         {{--        decoración css--}}
+        @auth
         <div class="flex items-center justify-center">
-            <a 
+            <a
                 href="#"
                 class="group rounded-full bg-sky-600 p-2 text-sky-100 shadow-lg duration-300 hover:bg-sky-700 active:bg-sky-800"
             >
@@ -35,7 +36,7 @@
                 </svg>
             </a>
         </div>
-
+        @endauth
     </div>
 
 

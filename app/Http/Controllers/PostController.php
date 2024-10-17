@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function _construct(){
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth')->except('index', 'show');
     }
     public function index()
     {
