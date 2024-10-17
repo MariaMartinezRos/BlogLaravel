@@ -20,11 +20,10 @@ Route::resource('blog', PostController::class)
 //Route::delete('/blog/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 Route::view('/about','about')->name('about');
 
+//->middleware('auth'); POR SI QUISIERAMOS PROTEGER LA RUTA ABOUT
 
 
-Route::match(['put', 'patch'], '/', function(){
-    return 'This is a PUT PATCH request';
-});
+//COMPROBAR QUE ESTA BIEN ESCRITO
 
 
 Route::get('/dashboard', function () {

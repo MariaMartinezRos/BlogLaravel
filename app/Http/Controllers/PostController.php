@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function _construct(){
+        $this->middleware('auth')->except(['index', 'show']);
+    }
     public function index()
     {
 //        $posts = DB::table('posts')->get(); //IGUAL A = select * from posts;
