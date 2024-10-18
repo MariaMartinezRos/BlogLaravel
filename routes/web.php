@@ -27,7 +27,7 @@ Route::view('/about','about')->name('about');
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard');   //solo puedo acceder a esta vista si estoy autenticado/logueado
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
