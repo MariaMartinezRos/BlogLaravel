@@ -11,17 +11,17 @@ class BlogLayout extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
-    {
-//        public string $metaTitle;
-//        public string $metaBody;
-    }
+    public function __construct(
+        public string $metaTitle = 'Default title',
+        public string $metaDescription = 'Default description',
+    )
+    {}
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('components.blog-layout');
+        return view('layouts.blog-layout');
     }
 }
