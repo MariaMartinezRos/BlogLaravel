@@ -83,4 +83,25 @@ if(themeMenu){
     });
 }
 
+// LOGIN & REGISTER MENU
+document
+    .getElementById("toggle-login-menu")
+    .addEventListener("click", () =>
+        themeMenu.classList.toggle("hidden")
+    );
+const loginRegisterMenu = document.getElementById(
+    "toggle-login-menu"
+);
+
+//si estas autentificado, no se muestra
+loginRegisterMenu.addEventListener("click", () => {
+    document.getElementById("login-menu").classList.toggle("hidden");
+    document
+        .getElementById("open-menu-icon")
+        .classList.toggle("hidden");
+    document
+        .getElementById("close-menu-icon")
+        .classList.toggle("hidden");
+});
+
 
