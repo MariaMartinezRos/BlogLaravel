@@ -1,4 +1,4 @@
-<x-layout meta-title="Blog" meta-description="Descripcion de la página de blog">
+<x-blog-layout meta-title="Blog" meta-description="Descripcion de la página de blog">
 
     {{--  muestra los mensaejsd de post (store)--}}
 {{--    <div>--}}
@@ -119,6 +119,6 @@
 {{--            </form>--}}
 {{--        </div>--}}
 {{--    @endforeach--}}
-</x-layout>
+</x-blog-layout>
 
 

@@ -19,7 +19,7 @@
                         @include('posts.form-fields')
 
                         <br/>
-                        <button type="submit">{{__('Send')}}</button>
+                        <button type="submit">{{__('Save')}}</button>
                         <br/>
                     </form>
 {{--                    <a href="{{route('posts.index')}}">{{__('Back')}}</a>--}}

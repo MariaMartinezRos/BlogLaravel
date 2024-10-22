@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $metaTitle ?? 'Default title' }}</title>
-    <meta name="description" content="{{ $metaDescription ?? 'Default Description' }}">
+    <title>{{ $metaTitle }}</title>
+    <meta name="description" content="{{ $metaDescription }}">  {{--?? 'Default Description'--}}
     @vite(['resources/js/app.js','resources/css/app.css'])
 </head>
 <body class="flex h-screen flex-col bg-slate-100 selection:bg-sky-600 selection:text-sky-50 dark:bg-slate-950">
-<x-partials.navigation/>
+{{--<x-partials.navigation/>--}}
+@include('layouts.blog-navigation')
 
 {{--mostrar mensajes flash de tipo estatus--}}
 @session('status')
