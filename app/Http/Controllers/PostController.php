@@ -78,6 +78,15 @@ class PostController extends Controller
             ->with('status', 'Post deleted successfully');
 
     }
+
+    // Muestra los posts creados por el usuario logeado
+    public function myPosts()
+    {
+        $user = auth()->user();
+        $posts = $user->posts; // Asumiendo que hay una relación definida en el modelo User
+
+        return view('my_posts', compact('posts'));
+    }
 }
 
 

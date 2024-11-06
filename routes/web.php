@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\PostController;
+
+Route::get('/my-posts', [PostController::class, 'myPosts'])->middleware('auth')->name('posts.my_posts');
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +21,8 @@ Route::resource('blog', PostController::class)
 //Route::get('/blog/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
 //Route::patch('/blog/{post}', [PostController::class, 'update'])->name('posts.update');
 //Route::delete('/blog/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+Route::get('/my-posts', [PostController::class, 'myPosts'])->middleware('auth')->name('my_posts');
 Route::view('/about','about')->name('about');
 
 //->middleware('auth'); POR SI QUISIERAMOS PROTEGER LA RUTA ABOUT
